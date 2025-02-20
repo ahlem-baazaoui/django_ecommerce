@@ -1,0 +1,5 @@
+
+database = "django_polytec_app"
+user = "root"
+password = "ton_mot_de_passe"
+default-character-set = utf8

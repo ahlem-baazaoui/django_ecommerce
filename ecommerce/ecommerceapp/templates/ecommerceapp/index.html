@@ -1,0 +1,141 @@
+{# ecommerceapp/templates/ecommerceapp/index.html #}
+
+{% extends 'layout.html' %}
+
+{% block title %}Accueil{% endblock title %}
+
+{% block content %}
+
+{% if messages %}
+{% for message in messages %}
+<span class="block text-center text-xl">{{ message }}</span>
+
+{% endfor %}
+{% endif %}
+
+   <form action="/" method="post" class="join-form mt-8 m-auto" enctype="multipart/form-data" >
+{% csrf_token %}
+
+<div class="">
+<label for="" class="block mb-2 text-lg">Une image </label>
+
+<br>
+<img src="https://www.polytecsousse.tn/wp-
+content/uploads/2020/09/cropped-logo-polytech.png" alt="" class="w-full object-cover object-center">
+<br>
+<!-- {{ form.picture }} -->
+</div>
+<div class="mt-4">
+Nom et prénom: {{ form.full_name }}
+<span class="text-sm text-red-600">
+{{ form.full_name.errors }}
+</span>
+</div>
+<div class="mt-4">
+ Email: {{ form.email }}
+
+<span class="text-sm text-red-600">
+
+{{ form.email.errors }}
+</span>
+</div>
+<div class="mt-4">
+Compte Facebook {{ form.facebook }}
+<span class="text-sm text-red-600">
+
+{{ form.facebook.errors }}
+</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="mt-4 ">
+Compte twitter {{ form.twitter }}
+
+<span class="text-sm text-red-600">
+
+{{ form.twitter.errors }}
+</span>
+</div>
+<br>
+<div class="mt-4 ">
+Compte linkedin {{ form.linkedin }}
+<span class="text-sm text-red-600">
+
+{{ form.linkedin.errors }}
+</span>
+</div>
+</div>
+<div class="mt-4">
+Site web {{ form.website }}
+<span class="text-sm text-red-600">
+{{ form.website.errors }}
+</span>
+</div>
+</div>
+<div class="mt-4">
+        picture: {{ form.picture }}
+        <span class="text-sm text-red-600"> {{ form.picture.errors }} </span>
+    </div>
+
+<div class="mt-4">
+<input type="submit" value="Valider" class="bg-green p-3 cursor-pointer w-full">
+<input type="reset" value="Reset" class="bg-green p-3 cursor-pointer w-full">
+</div>
+
+</form>
+
+<style type="text/CSS">
+.fa-facebook-f:before{content:"\f39e"}
+.fa-facebook:before{content:"\f09a"}
+.fa-facebook-messenger:before{content:"\f39f"}
+.fa-facebook-square:before{content:"\f082"}
+.fa-twitch:before{content:"\f1e8"}
+.fa-twitter:before{content:"\f099"}
+.fa-twitter-square:before{content:"\f081"}
+.fa-linkedin:before{content:"\f08c"}
+.fa-linkedin-in:before{content:"\f0e1"}
+.bg-blue{--bg-opacity:1;background-color: #B0C4DE ;}
+.px-2{padding-left:.5rem;padding-right:.5rem}
+.px-8{padding-left:2rem;padding-right:2rem}
+.text-center{color:#edf2f7;font-size:2.25rem ; font-weight:700;text-align:center}
+.bg-green{background-color:#B0C4DE;}
+.mt-3{margin-top:.75rem}
+.ml-3{margin-left:.75rem}
+.flex{display:flex}
+.inline-flex{display:inline-flex}
+.flex-row{flex-direction:row}
+.flex-row-reverse{flex-direction:row-reverse}
+.flex-col{flex-direction:column}
+.flex-col-reverse{flex-direction:column-reverse}
+.flex-wrap{flex-wrap:wrap}
+.flex-wrap-reverse{flex-wrap:wrap-reverse}
+.flex-no-wrap{flex-wrap:nowrap}
+.justify-center{justify-content:center}
+.mt-4{margin-top:1rem}
+.mx-1{margin-left:.25rem;margin-right:.25rem}
+.cursor-pointer{cursor:pointer}
+.w-full{width:30%}
+.justify-between{justify-content:space-between}
+.-mx-1{margin-left:-.25rem;margin-right:-.25rem}
+.m-auto{margin:auto}
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Nunito';
+}
+.member-card {
+width: 250px;
+margin: 1rem;
+}
+form.join-form {
+max-width: 500px;
+}
+</style>
+
+{% endblock content %}
+

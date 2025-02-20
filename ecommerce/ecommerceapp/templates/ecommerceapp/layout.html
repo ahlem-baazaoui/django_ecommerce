@@ -1,0 +1,24 @@
+{# templates/layout.html #}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Django Polytec App - {% block title %}{% endblock title %}</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<header>
+<h1>Django Polytec App-partie 1</h1>
+</header>
+{% block content %}{% endblock content %}
+<footer>
+ <p><a href="https://www.polytecsousse.tn" target="_blank">Visitez Polytech Sousse</a></p>
+    </footer>
+</footer>
+
+</body>
+</html>
