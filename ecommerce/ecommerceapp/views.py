@@ -24,3 +24,5 @@ def homepage(request):
 
 def membreviews(request,memberid):
     return render(request,'ecommerceapp/memberviews.html', locals())
+def tahyatunis(request,memberid):
+    return render(request,'ecommerceapp/memberviews.html', locals())
